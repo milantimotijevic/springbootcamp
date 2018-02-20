@@ -1,8 +1,11 @@
 package app;
 
+import app.security.TokenAuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -23,7 +26,10 @@ public class MainController {
     }
 
     @RequestMapping(value="/products")
-    public List<Product> getAllProducts() {
+    public List<Product> getAllProducts(HttpServletRequest req) {
+        Authentication auth = TokenAuthenticationService.getAuthentication(req);
+        String info = auth.getName();
+        System.out.println(info);
         return productRepository.findAll();
     }
 
