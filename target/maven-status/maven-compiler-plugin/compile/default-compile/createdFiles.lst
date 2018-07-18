@@ -1,0 +1,12 @@
+app\security\AppUserDetailsService.class
+app\security\WebSecurityConfig.class
+app\Product.class
+app\security\JWTAuthenticationFilter.class
+app\MainController.class
+app\ProductRepository.class
+app\security\TokenAuthenticationService.class
+app\UserRepository.class
+app\User.class
+app\Application.class
+app\security\AccountCredentials.class
+app\security\JWTLoginFilter.class
